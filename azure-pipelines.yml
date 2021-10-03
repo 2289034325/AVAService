@@ -23,7 +23,4 @@ steps:
 schedules:
 - cron: "0 19 * * *"
   displayName: "start"
-  branches:
-    include: [ string ] # which branches the schedule applies to
-    exclude: [ string ] # which branches to exclude from the schedule
   always: true
