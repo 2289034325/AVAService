@@ -18,6 +18,16 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: AzureCLI@2
+  displayName: Azure CLI
+  inputs:
+    azureSubscription: <Name of the Azure Resource Manager service connection>
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      az login --allow-no-subscription
+      az aks stop --name myAKSCluster --resource-group myResourceGroup
+
 schedules:
 - cron: string # cron syntax defining a schedule
   displayName: string # friendly name given to a specific schedule
