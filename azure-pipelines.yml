@@ -21,6 +21,7 @@ steps:
       az aks stop --name myAKSCluster --resource-group myResourceGroup
 
 schedules:
-- cron: "0 19 * * *"
+# run every hour
+- cron: "0 * * * *"
   displayName: "start"
   always: true
